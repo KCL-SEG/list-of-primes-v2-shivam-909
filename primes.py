@@ -6,9 +6,11 @@
 
 import math
 def primes(number_of_primes):
-    list = []
+    if number_of_primes < 1:
+        raise ValueError
 
-    i = 1
+    list = []
+    i = 2
     while len(list) != number_of_primes:
         if is_prime(i):
             list.append(i)
@@ -17,7 +19,7 @@ def primes(number_of_primes):
 
 
 def is_prime(n):
-    for i in range(1, int(math.sqrt(n))+1):
+    for i in range(2, int(math.sqrt(n))+1):
         if (n % i) == 0:
             return False
     return True
